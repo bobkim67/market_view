@@ -1,0 +1,415 @@
+/* ===== 전체 초기화 및 기본 설정 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 기본 폰트 및 배경 설정 */
+body {
+    font-family: 'Segoe UI', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #0f1923;
+    color: #e0e6ed;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ===== 전체 컨테이너 ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== 헤더 영역 ===== */
+.header {
+    text-align: center;
+    padding: 30px 0 20px;
+}
+
+/* 헤더 제목 */
+.header-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+/* 헤더 부제목 */
+.header-subtitle {
+    font-size: 0.95rem;
+    color: #8899aa;
+}
+
+/* ===== 기간 선택 탭 ===== */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+/* 탭 버튼 기본 스타일 */
+.tab-button {
+    padding: 10px 32px;
+    border: 1px solid #2a3a4a;
+    background-color: #1a2733;
+    color: #8899aa;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* 탭 버튼 호버 효과 */
+.tab-button:hover {
+    background-color: #243342;
+    color: #c0d0e0;
+}
+
+/* 탭 버튼 활성 상태 */
+.tab-button.active {
+    background-color: #1a6bff;
+    border-color: #1a6bff;
+    color: #ffffff;
+}
+
+/* ===== 날짜 표시 영역 ===== */
+.date-display {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7d8e;
+    margin-bottom: 24px;
+}
+
+/* ===== 주요 지수 카드 그리드 ===== */
+.index-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* 개별 카드 스타일 */
+.card {
+    background-color: #1a2733;
+    border: 1px solid #2a3a4a;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 카드 호버 효과 */
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* 카드 헤더 (제목 + 뱃지) */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* 카드 제목 */
+.card-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #8899aa;
+    letter-spacing: 0.5px;
+}
+
+/* 카드 뱃지 */
+.card-badge {
+    font-size: 0.7rem;
+    background-color: #243342;
+    color: #6b8aaa;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* 카드 수치 값 */
+.card-value {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+/* 카드 등락률 */
+.card-change {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* 상승일 때 색상 (빨간색 - 한국 주식시장 기준) */
+.card-change.up {
+    color: #ff4757;
+}
+
+/* 하락일 때 색상 (파란색 - 한국 주식시장 기준) */
+.card-change.down {
+    color: #1e90ff;
+}
+
+/* 보합일 때 색상 */
+.card-change.flat {
+    color: #8899aa;
+}
+
+/* ===== 섹션 공통 스타일 ===== */
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2a3a4a;
+}
+
+/* ===== 시황 요약 영역 ===== */
+.summary-section {
+    background-color: #1a2733;
+    border: 1px solid #2a3a4a;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* 시황 요약 내용 */
+.summary-content {
+    font-size: 0.95rem;
+    color: #b0c0d0;
+    line-height: 1.8;
+}
+
+/* 시황 요약 내 문단 */
+.summary-content p {
+    margin-bottom: 12px;
+}
+
+/* 시황 요약 내 강조 항목 */
+.summary-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #1f2f3f;
+}
+
+/* 마지막 항목은 하단 선 제거 */
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+/* 요약 항목 아이콘 */
+.summary-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ===== 섹터별 등락 영역 ===== */
+.sector-section {
+    background-color: #1a2733;
+    border: 1px solid #2a3a4a;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* 섹터 그리드 */
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+/* 개별 섹터 아이템 */
+.sector-item {
+    background-color: #0f1923;
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 섹터 이름 */
+.sector-name {
+    font-size: 0.9rem;
+    color: #c0d0e0;
+}
+
+/* 섹터 등락률 */
+.sector-change {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* 섹터 상승 */
+.sector-change.up {
+    color: #ff4757;
+}
+
+/* 섹터 하락 */
+.sector-change.down {
+    color: #1e90ff;
+}
+
+/* ===== 주요 뉴스 영역 ===== */
+.news-section {
+    background-color: #1a2733;
+    border: 1px solid #2a3a4a;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* 뉴스 리스트 */
+.news-list {
+    list-style: none;
+}
+
+/* 개별 뉴스 아이템 */
+.news-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #1f2f3f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 마지막 뉴스는 하단 선 제거 */
+.news-item:last-child {
+    border-bottom: none;
+}
+
+/* 뉴스 제목 */
+.news-title {
+    font-size: 0.95rem;
+    color: #c0d0e0;
+    flex: 1;
+}
+
+/* 뉴스 태그 */
+.news-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* 뉴스 태그 색상 변형 */
+.news-tag.stock {
+    background-color: rgba(255, 71, 87, 0.15);
+    color: #ff4757;
+}
+
+.news-tag.forex {
+    background-color: rgba(30, 144, 255, 0.15);
+    color: #1e90ff;
+}
+
+.news-tag.crypto {
+    background-color: rgba(255, 165, 0, 0.15);
+    color: #ffa500;
+}
+
+.news-tag.economy {
+    background-color: rgba(46, 213, 115, 0.15);
+    color: #2ed573;
+}
+
+.news-tag.bond {
+    background-color: rgba(155, 89, 182, 0.15);
+    color: #9b59b6;
+}
+
+/* ===== 푸터 영역 ===== */
+.footer {
+    text-align: center;
+    padding: 24px 0;
+    color: #4a5a6a;
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+/* ===== 로딩 애니메이션 ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 카드 등장 애니메이션 */
+.card {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* 카드별 지연 시간 (순차적 등장 효과) */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+.card:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6) { animation-delay: 0.3s; }
+
+/* ===== 반응형 디자인: 태블릿 ===== */
+@media (max-width: 768px) {
+    /* 태블릿에서 카드 2열 배치 */
+    .index-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 헤더 크기 축소 */
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    /* 탭 버튼 크기 축소 */
+    .tab-button {
+        padding: 8px 24px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== 반응형 디자인: 모바일 ===== */
+@media (max-width: 480px) {
+    /* 모바일에서 카드 1열 배치 */
+    .index-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* 컨테이너 패딩 축소 */
+    .container {
+        padding: 12px;
+    }
+
+    /* 헤더 크기 축소 */
+    .header-title {
+        font-size: 1.3rem;
+    }
+
+    /* 뉴스 아이템 세로 배치 */
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* 섹터 그리드 2열 고정 */
+    .sector-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

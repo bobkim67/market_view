@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>금융 시황 대시보드</title>
+    <!-- 스타일시트 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 전체 컨테이너 -->
+    <div class="container">
+
+        <!-- 헤더 영역 -->
+        <header class="header">
+            <h1 class="header-title">📊 금융 시황 대시보드</h1>
+            <p class="header-subtitle">일간 · 주간 · 월간 금융 시황을 한눈에 확인하세요</p>
+        </header>
+
+        <!-- 기간 선택 탭 -->
+        <nav class="tab-nav">
+            <button class="tab-button active" data-period="daily">일간</button>
+            <button class="tab-button" data-period="weekly">주간</button>
+            <button class="tab-button" data-period="monthly">월간</button>
+        </nav>
+
+        <!-- 날짜 표시 영역 -->
+        <div class="date-display">
+            <span id="currentDate"></span>
+        </div>
+
+        <!-- 주요 지수 카드 영역 -->
+        <section class="index-cards">
+            <!-- 코스피 카드 -->
+            <div class="card" id="card-kospi">
+                <div class="card-header">
+                    <span class="card-title">KOSPI</span>
+                    <span class="card-badge">코스피</span>
+                </div>
+                <div class="card-value" id="kospi-value">-</div>
+                <div class="card-change" id="kospi-change">-</div>
+            </div>
+
+            <!-- 코스닥 카드 -->
+            <div class="card" id="card-kosdaq">
+                <div class="card-header">
+                    <span class="card-title">KOSDAQ</span>
+                    <span class="card-badge">코스닥</span>
+                </div>
+                <div class="card-value" id="kosdaq-value">-</div>
+                <div class="card-change" id="kosdaq-change">-</div>
+            </div>
+
+            <!-- 환율 카드 -->
+            <div class="card" id="card-usdkrw">
+                <div class="card-header">
+                    <span class="card-title">USD/KRW</span>
+                    <span class="card-badge">원/달러</span>
+                </div>
+                <div class="card-value" id="usdkrw-value">-</div>
+                <div class="card-change" id="usdkrw-change">-</div>
+            </div>
+
+            <!-- 금 시세 카드 -->
+            <div class="card" id="card-gold">
+                <div class="card-header">
+                    <span class="card-title">GOLD</span>
+                    <span class="card-badge">금 (oz)</span>
+                </div>
+                <div class="card-value" id="gold-value">-</div>
+                <div class="card-change" id="gold-change">-</div>
+            </div>
+
+            <!-- 비트코인 카드 -->
+            <div class="card" id="card-btc">
+                <div class="card-header">
+                    <span class="card-title">BTC</span>
+                    <span class="card-badge">비트코인</span>
+                </div>
+                <div class="card-value" id="btc-value">-</div>
+                <div class="card-change" id="btc-change">-</div>
+            </div>
+
+            <!-- 국채 금리 카드 -->
+            <div class="card" id="card-bond">
+                <div class="card-header">
+                    <span class="card-title">국채 3Y</span>
+                    <span class="card-badge">금리</span>
+                </div>
+                <div class="card-value" id="bond-value">-</div>
+                <div class="card-change" id="bond-change">-</div>
+            </div>
+        </section>
+
+        <!-- 시황 요약 영역 -->
+        <section class="summary-section">
+            <h2 class="section-title">시황 요약</h2>
+            <div class="summary-content" id="summaryContent">
+                <!-- JavaScript로 내용이 채워집니다 -->
+            </div>
+        </section>
+
+        <!-- 섹터별 등락 영역 -->
+        <section class="sector-section">
+            <h2 class="section-title">섹터별 등락</h2>
+            <div class="sector-grid" id="sectorGrid">
+                <!-- JavaScript로 내용이 채워집니다 -->
+            </div>
+        </section>
+
+        <!-- 주요 뉴스 영역 -->
+        <section class="news-section">
+            <h2 class="section-title">주요 뉴스</h2>
+            <ul class="news-list" id="newsList">
+                <!-- JavaScript로 내용이 채워집니다 -->
+            </ul>
+        </section>
+
+        <!-- 푸터 영역 -->
+        <footer class="footer">
+            <p>※ 본 데이터는 샘플 데이터이며, 실제 투자 판단의 근거로 사용할 수 없습니다.</p>
+            <p>마지막 업데이트: <span id="lastUpdate"></span></p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>
