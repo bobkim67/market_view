@@ -13,15 +13,17 @@ const marketData = {
             usdkrw: { value: "1,452.30", change: "+5.70",  percent: "+0.39%", direction: "up" },
             gold:   { value: "$2,867.50", change: "+12.30", percent: "+0.43%", direction: "up" },
             btc:    { value: "$97,250",  change: "-1,420",  percent: "-1.44%", direction: "down" },
-            bond:   { value: "2.68%",    change: "-0.03%p", percent: "",       direction: "down" }
+            bond3y:  { value: "2.68%",    change: "-0.03%p", percent: "",       direction: "down" },
+            bond10y: { value: "2.95%",    change: "-0.02%p", percent: "",       direction: "down" },
+            bond30y: { value: "2.78%",    change: "+0.01%p", percent: "",       direction: "up" }
         },
-        // 시황 요약 데이터
+        // 시황 요약 데이터 (url: 관련 뉴스 출처 링크)
         summary: [
-            { icon: "📈", text: "코스피는 외국인 순매수에 힘입어 상승 마감. 반도체·자동차 업종 강세." },
-            { icon: "📉", text: "코스닥은 바이오·엔터테인먼트 업종 약세로 소폭 하락." },
-            { icon: "💵", text: "원/달러 환율은 미국 고용지표 호조에 달러 강세 지속." },
-            { icon: "🪙", text: "금 가격은 안전자산 수요 증가로 사상 최고치 경신." },
-            { icon: "₿",  text: "비트코인은 차익실현 매물 출회로 소폭 하락." }
+            { icon: "📈", text: "코스피는 외국인 순매수에 힘입어 상승 마감. 반도체·자동차 업종 강세.", url: "https://finance.naver.com/sise/sise_index.naver?code=KOSPI" },
+            { icon: "📉", text: "코스닥은 바이오·엔터테인먼트 업종 약세로 소폭 하락.", url: "https://finance.naver.com/sise/sise_index.naver?code=KOSDAQ" },
+            { icon: "💵", text: "원/달러 환율은 미국 고용지표 호조에 달러 강세 지속.", url: "https://finance.naver.com/marketindex/exchangeDetail.naver?marketindexCd=FX_USDKRW" },
+            { icon: "🪙", text: "금 가격은 안전자산 수요 증가로 사상 최고치 경신.", url: "https://finance.naver.com/marketindex/goldDetail.naver" },
+            { icon: "₿",  text: "비트코인은 차익실현 매물 출회로 소폭 하락.", url: "https://www.coingecko.com/ko/%EC%BD%94%EC%9D%B8/%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8" }
         ],
         // 섹터별 등락 데이터
         sectors: [
@@ -53,14 +55,16 @@ const marketData = {
             usdkrw: { value: "1,452.30", change: "+12.50", percent: "+0.87%", direction: "up" },
             gold:   { value: "$2,867.50", change: "+58.40", percent: "+2.08%", direction: "up" },
             btc:    { value: "$97,250",  change: "+3,820",  percent: "+4.08%", direction: "up" },
-            bond:   { value: "2.68%",    change: "-0.08%p", percent: "",       direction: "down" }
+            bond3y:  { value: "2.68%",    change: "-0.08%p", percent: "",       direction: "down" },
+            bond10y: { value: "2.93%",    change: "-0.05%p", percent: "",       direction: "down" },
+            bond30y: { value: "2.77%",    change: "-0.03%p", percent: "",       direction: "down" }
         },
         summary: [
-            { icon: "📈", text: "코스피 주간 1.83% 상승. 외국인 3거래일 연속 순매수 기록." },
-            { icon: "📊", text: "코스닥도 주간 상승 전환. IT·게임 업종 반등 성공." },
-            { icon: "💵", text: "원/달러 환율은 주간 12.5원 상승. 트럼프 관세 우려 지속." },
-            { icon: "🪙", text: "금 가격 주간 2% 넘게 상승. 지정학적 리스크 확대 영향." },
-            { icon: "🌍", text: "글로벌 증시 혼조세. 미국 기술주 강세, 유럽 증시 약세." }
+            { icon: "📈", text: "코스피 주간 1.83% 상승. 외국인 3거래일 연속 순매수 기록.", url: "https://finance.naver.com/sise/sise_index.naver?code=KOSPI" },
+            { icon: "📊", text: "코스닥도 주간 상승 전환. IT·게임 업종 반등 성공.", url: "https://finance.naver.com/sise/sise_index.naver?code=KOSDAQ" },
+            { icon: "💵", text: "원/달러 환율은 주간 12.5원 상승. 트럼프 관세 우려 지속.", url: "https://finance.naver.com/marketindex/exchangeDetail.naver?marketindexCd=FX_USDKRW" },
+            { icon: "🪙", text: "금 가격 주간 2% 넘게 상승. 지정학적 리스크 확대 영향.", url: "https://finance.naver.com/marketindex/goldDetail.naver" },
+            { icon: "🌍", text: "글로벌 증시 혼조세. 미국 기술주 강세, 유럽 증시 약세.", url: "https://finance.naver.com/world/" }
         ],
         sectors: [
             { name: "반도체",     change: "+3.45%", direction: "up" },
@@ -90,14 +94,16 @@ const marketData = {
             usdkrw: { value: "1,439.80", change: "+16.20",  percent: "+1.14%", direction: "up" },
             gold:   { value: "$2,809.10", change: "+185.60", percent: "+7.07%", direction: "up" },
             btc:    { value: "$93,430",  change: "-756",     percent: "-0.80%", direction: "down" },
-            bond:   { value: "2.76%",    change: "-0.09%p",  percent: "",       direction: "down" }
+            bond3y:  { value: "2.76%",    change: "-0.09%p",  percent: "",       direction: "down" },
+            bond10y: { value: "2.98%",    change: "-0.12%p",  percent: "",       direction: "down" },
+            bond30y: { value: "2.80%",    change: "-0.07%p",  percent: "",       direction: "down" }
         },
         summary: [
-            { icon: "📉", text: "코스피 월간 3.11% 하락. 미국 관세 불확실성과 외국인 매도세 영향." },
-            { icon: "📉", text: "코스닥 월간 5% 넘게 하락. 성장주 전반 약세 지속." },
-            { icon: "💵", text: "원/달러 환율 월간 16원 상승. 1,400원대 고착화 우려." },
-            { icon: "🪙", text: "금 가격 월간 7% 급등. 중앙은행 금 매입 확대 지속." },
-            { icon: "📊", text: "글로벌 시장, AI 테마 지속 강세. 엔비디아 시가총액 사상 최고." }
+            { icon: "📉", text: "코스피 월간 3.11% 하락. 미국 관세 불확실성과 외국인 매도세 영향.", url: "https://finance.naver.com/sise/sise_index.naver?code=KOSPI" },
+            { icon: "📉", text: "코스닥 월간 5% 넘게 하락. 성장주 전반 약세 지속.", url: "https://finance.naver.com/sise/sise_index.naver?code=KOSDAQ" },
+            { icon: "💵", text: "원/달러 환율 월간 16원 상승. 1,400원대 고착화 우려.", url: "https://finance.naver.com/marketindex/exchangeDetail.naver?marketindexCd=FX_USDKRW" },
+            { icon: "🪙", text: "금 가격 월간 7% 급등. 중앙은행 금 매입 확대 지속.", url: "https://finance.naver.com/marketindex/goldDetail.naver" },
+            { icon: "📊", text: "글로벌 시장, AI 테마 지속 강세. 엔비디아 시가총액 사상 최고.", url: "https://finance.naver.com/world/" }
         ],
         sectors: [
             { name: "반도체",     change: "-2.31%", direction: "down" },
@@ -137,7 +143,9 @@ function renderDashboard(period) {
     updateCard("usdkrw", data.indices.usdkrw);
     updateCard("gold", data.indices.gold);
     updateCard("btc", data.indices.btc);
-    updateCard("bond", data.indices.bond);
+    updateCard("bond3y", data.indices.bond3y);
+    updateCard("bond10y", data.indices.bond10y);
+    updateCard("bond30y", data.indices.bond30y);
 
     // --- 시황 요약 렌더링 ---
     renderSummary(data.summary);
@@ -179,14 +187,23 @@ function renderSummary(summaryList) {
     // 시황 요약 컨테이너 가져오기
     const container = document.getElementById("summaryContent");
 
-    // HTML 문자열 생성
+    // HTML 문자열 생성 (URL이 있으면 클릭 가능한 링크로 생성)
     let html = "";
     for (let i = 0; i < summaryList.length; i++) {
         const item = summaryList[i];
-        html += '<div class="summary-item">';
-        html += '  <span class="summary-icon">' + item.icon + '</span>';
-        html += '  <span>' + item.text + '</span>';
-        html += '</div>';
+        if (item.url) {
+            // URL이 있는 경우 클릭하면 새 탭에서 뉴스 출처로 이동
+            html += '<a class="summary-item summary-item-link" href="' + item.url + '" target="_blank" rel="noopener noreferrer">';
+            html += '  <span class="summary-icon">' + item.icon + '</span>';
+            html += '  <span>' + item.text + '</span>';
+            html += '</a>';
+        } else {
+            // URL이 없는 경우 일반 항목으로 표시
+            html += '<div class="summary-item">';
+            html += '  <span class="summary-icon">' + item.icon + '</span>';
+            html += '  <span>' + item.text + '</span>';
+            html += '</div>';
+        }
     }
 
     // 컨테이너에 HTML 삽입
