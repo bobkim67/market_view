@@ -205,6 +205,23 @@ body {
     border-bottom: none;
 }
 
+/* 클릭 가능한 시황 요약 항목 (링크) */
+.summary-item-link {
+    text-decoration: none;
+    color: #b0c0d0;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 -10px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 클릭 가능한 요약 항목 호버 효과 */
+.summary-item-link:hover {
+    background-color: #243342;
+    color: #ffffff;
+}
+
 /* 요약 항목 아이콘 */
 .summary-icon {
     font-size: 1.1rem;
@@ -357,13 +374,15 @@ body {
     animation: fadeIn 0.4s ease forwards;
 }
 
-/* 카드별 지연 시간 (순차적 등장 효과) */
+/* 카드별 지연 시간 (순차적 등장 효과, 국채 3개 포함 총 8장) */
 .card:nth-child(1) { animation-delay: 0.05s; }
 .card:nth-child(2) { animation-delay: 0.1s; }
 .card:nth-child(3) { animation-delay: 0.15s; }
 .card:nth-child(4) { animation-delay: 0.2s; }
 .card:nth-child(5) { animation-delay: 0.25s; }
 .card:nth-child(6) { animation-delay: 0.3s; }
+.card:nth-child(7) { animation-delay: 0.35s; }
+.card:nth-child(8) { animation-delay: 0.4s; }
 
 /* ===== 반응형 디자인: 태블릿 ===== */
 @media (max-width: 768px) {
